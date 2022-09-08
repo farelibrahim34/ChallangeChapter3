@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.challangechapter3.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentSatu"
+            app:destination="@id/fragmentSatu" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSatu"
+        android:name="com.example.challangechapter3.FragmentSatu"
+        android:label="fragment_satu"
+        tools:layout="@layout/fragment_satu" >
+        <action
+            android:id="@+id/action_fragmentSatu_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+        <argument
+            android:name="huruf"
+            app:argType="string" />
+    </fragment>
+</navigation>

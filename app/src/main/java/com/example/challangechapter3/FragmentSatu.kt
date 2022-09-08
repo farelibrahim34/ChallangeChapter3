@@ -1,6 +1,7 @@
 package com.example.challangechapter3
 
 import android.os.Bundle
+import android.renderscript.ScriptGroup
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
+import com.example.challangechapter3.databinding.FragmentSatuBinding
 
 
-class FragmentSatu : Fragment() {
+class FragmentSatu(val xhuruf : String) : Fragment() {
+    lateinit var binding : FragmentSatuBinding
 
 
     override fun onCreateView(
@@ -23,9 +27,14 @@ class FragmentSatu : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var huruf = arguments?.getString("huruf")
-        Toast.makeText(context, huruf.toString(), Toast.LENGTH_SHORT).show()
-        when (huruf){
+
+        binding = FragmentSatuBinding.bind(view)
+
+        var kata : String = xhuruf
+
+//        var huruf = arguments?.getString("huruf")
+        Toast.makeText(context, xhuruf, Toast.LENGTH_SHORT).show()
+        when (kata){
             "A" -> listA()
             "B" -> listB()
             else -> Toast.makeText(context, "else di pilih", Toast.LENGTH_SHORT).show()
@@ -56,9 +65,9 @@ class FragmentSatu : Fragment() {
     fun listB(){
 
         val listdata = arrayListOf(
-            ListData("b"),
-            ListData("B"),
-            ListData("ADMINISTRASI"),
+            ListData("BAPAK"),
+            ListData("BANJARNEGARA"),
+            ListData("BOLA"),
 
             )
         val adapter = Adapter(listdata)

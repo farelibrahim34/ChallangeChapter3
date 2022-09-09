@@ -36,15 +36,18 @@ class Adapter(val listData : ArrayList<ListData>):RecyclerView.Adapter<Adapter.V
                     val x = v!!.context as AppCompatActivity
                     val huruf = FragmentSatu(holder.btn.text.toString())
                     x.supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2,huruf).addToBackStack(null).commit()
-                    Toast.makeText(context,"berhasil",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,"Berhasil Menuju Kata ${holder.btn.text}",Toast.LENGTH_SHORT).show()
                 }else{
                     val link = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q= ${holder.btn.text.toString()}"))
                     context.startActivity(link)
+                    Toast.makeText(context, "Mencari Kata ${holder.btn.text}", Toast.LENGTH_SHORT).show()
                 }
+
 
             }
 
-        })
+        }
+        )
 
 
 

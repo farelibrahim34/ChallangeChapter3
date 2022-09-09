@@ -52,8 +52,6 @@ class FragmentSatu(val xhuruf : String) : Fragment() {
 
 
 
-
-
     }
     fun listA(){
 

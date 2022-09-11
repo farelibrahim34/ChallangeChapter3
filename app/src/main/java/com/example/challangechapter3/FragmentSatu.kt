@@ -45,7 +45,7 @@ class FragmentSatu(val xhuruf : String) : Fragment() {
             "H" -> listH()
             "I" -> listI()
             "J" -> listJ()
-            else -> Toast.makeText(context, "else di pilih", Toast.LENGTH_SHORT).show()
+
         }
 
 

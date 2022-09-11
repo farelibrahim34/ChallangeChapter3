@@ -39,10 +39,6 @@ class FragmentSatu : Fragment() {
             "I" -> listI()
             "J" -> listJ()
 
-
-
-
-            else -> Toast.makeText(context, "else di pilih", Toast.LENGTH_SHORT).show()
         }
 
 
